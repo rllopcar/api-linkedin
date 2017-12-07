@@ -22,6 +22,9 @@ const uxDesignerController = require('../controllers/uxDesigner')
 
 const router = express.Router()
 
+router.get('/', function(req, res, next) {
+    res.render('index');
+});
 
 router.get('/api-linkedin/v1/profiles/backEnd', backEndController.getBackEnds)
 router.get('/api-linkedin/v1/profiles/bigDataArchitect', bigDataArchitectController.getBigDataAchitects)
