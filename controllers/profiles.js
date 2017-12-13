@@ -26,17 +26,18 @@ function saveProfiles (req, res){
     profile.courses = JSON.stringify(req.body.courses)
     profile.publications = JSON.stringify(req.body.publications)
     profile.comment = JSON.stringify(req.body.comment)
+    profile.puesto = req.body.puesto
     
     profile.save((err, profileStored) => {
-        console.log(`la variable profile es: ${profile}`)
+        //console.log(`la variable profile es: ${profile}`)
 
         if (err) return res.status(500).send({message: `Error en el lado del sevidor: ${err}`})
         
         res.status(200).send({perfil: profileStored})
-        console.log('MENSAJE GUARDADO')
+        //console.log('MENSAJE GUARDADO')
     
     })
-    console.log('MENSAJE GUARDADO')
+    //console.log('MENSAJE GUARDADO')
 }
 
 function getProfiles (req, res) {

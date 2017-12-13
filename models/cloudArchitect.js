@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const CloudArchitectSchema = Schema ({
 
     label: String,
+    puesto: String,
     name: String,
     extract: String,
     experience: String,
@@ -21,6 +22,7 @@ const CloudArchitectSchema = Schema ({
     courses: String,
     publications: String,
     comment: String
+
 })
 
 

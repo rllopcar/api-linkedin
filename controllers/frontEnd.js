@@ -18,8 +18,7 @@ function getFrontEnd (req, res) {
 } 
 
 function getFrontEnds(req, res) {
-    console.log('HOLALLLLLLLAAAAAAAAA')
-    Profiles.find({label: 'FrontEnd'} , (err, FrontEndProfiles) => { 
+    Profiles.find({puesto: 'frontEnd'} , (err, FrontEndProfiles) => { 
         if (err) return res.status(500).send({message:`Error al realizar getFindAll: ${err}`})
         if(!FrontEnd) return res.status(404).send({message: `No hay perfiles Front End :${err}`}) 
 
@@ -42,9 +41,8 @@ function updateFrontEnd(req, res) {
 
 function deleteFrontEnd(req, res) {
     let frontEndId = req.params.frontEndId
-    //console.log(`${frontEndId}`)
+    
         FrontEnd.findById(frontEndId, (err, pFrontEnd) => {
-            //if (err) res.status(500).send({message: `Perfil Front End no existe: ${err}`})
             if (!pFrontEnd) res.status(500).send({message: `Perfil Front End no existe: ${err}`})
             
             pFrontEnd.remove(err => {

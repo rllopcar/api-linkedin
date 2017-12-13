@@ -6,6 +6,7 @@ const Schema = mongoose.Schema
 const DevOpsEngineerSchema = Schema ({
 
     label: String,
+    puesto: String,
     name: String,
     extract: String,
     experience: String,
